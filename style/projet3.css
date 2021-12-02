@@ -225,4 +225,17 @@ body {
 }
 .card__like {
     background-color: #fff!important;
+}/*les parties communes*/
+.fleche{
+    position: absolute;
+    left: 2rem;
+    height: 2rem;
+    width: 2rem;
+    top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #000;
 }
