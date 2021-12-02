@@ -201,7 +201,7 @@ body {
 .menu_bouton{
     height: 32px;
     width: 32px;
-    background-color: initial;
+    /*background-color: initial;*/
     border: 0 solid transparent;
     padding: 0;
     display: flex;
@@ -238,4 +238,75 @@ body {
     transform: translateY(-50%);
     font-size: 1.2rem;
     color: #000;
+}
+#palette_img{
+    max-width: 100%;
+    max-height: 32rem;
+    width: 100%;
+    object-fit: cover;
+}
+#menu_du_restaurant{
+ 
+        margin-top: -4rem;
+        border-radius: 2rem 2rem 0 0;
+        background-color: #f6f6f6;
+        z-index: 1;
+        position: relative;
+    
+}
+#titre_menu{
+    font-family: Shrikhand,"cursive";
+}
+#entete_du_menu{
+    padding: 1rem 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bouton_like {
+    height: 2rem;
+    width: 2rem;
+    background-color: initial;
+    border: 0 solid transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #000;
+}
+/*.menu__like {
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: lighten;
+}
+.menu_liker:before, .menu__like {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.bouton_like .menu__like--noBg {
+    opacity: 0;
+}
+.bouton_like:before {
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(
+0deg
+,#9356dc,#ff79da);
+}*/
+.bouton_like:before {
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(
+0deg
+,#9356dc,#ff79da);
 }
