@@ -7,9 +7,15 @@ body {
     font-family: Shrikhand,"cursive";
     margin: 0;
     text-align: center;
+    text-decoration: none;
 }
 #logo{
     margin: 16px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 #recherche{
     position: relative;
@@ -47,8 +53,13 @@ body {
     background-color: #686868;
     background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
     cursor: pointer;
-    transition-duration: .25s;
+    transition: transform ease-in-out;
     box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+}
+#explorer:hover
+{
+    opacity: 1;
+    background-color: #f3f3f3;
 }
 #bloc_Fonctionnement{
     padding: 32px 16px;
@@ -185,47 +196,7 @@ body {
 .pied_page_carte_sousTitre{
     margin: 0;
 }
-.bouton_carte{
-    height: 16px;
-    width: 32px;
-    background-color: initial;
-    border: 0 solid transparent;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    background-color: #000;
-}
-.menu_bouton{
-    height: 32px;
-    width: 32px;
-    /*background-color: initial;*/
-    border: 0 solid transparent;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.menu__like {
-    transition-duration: .25s;
-    background-color: #f6f6f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    mix-blend-mode: lighten;
-}
-.bouton_carte:before, .menu__like {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-.card__like {
-    background-color: #fff!important;
-}/*les parties communes*/
+
 .fleche{
     position: absolute;
     left: 2rem;
@@ -263,19 +234,49 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.bouton_like {
-    height: 2rem;
-    width: 2rem;
-    background-color: initial;
-    border: 0 solid transparent;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    background-color: #000;
+
+.card__like{
+    width: 32px;
+  height: 30px;
+  left: 36px;
+  /*font-size: 1.3rem;
+  font-family: arial, sans-serif;
+  font-weight: 700;*/
+  position: relative;
+  color: violet;
+  z-index: 0;
+ /* border: 1px solid #892cdc;*/
+ /* background: black;*/
+  overflow: hidden;
+
+  /*text-decoration: none;*/
+  /*display: flex;*/
+  /*align-items: center;
+  justify-content: center;*/
 }
+.card__like::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
+    background: white;
+    /*border-radius: 50% 50% 0% 0%;*/
+    z-index: -1;
+    transition: all .1s;
+  }
+  .card__like:hover::before {
+    top: 0;
+    border-radius: 0;
+  }
+  .fa-heart:hover::before{
+    color: red;
+}
+
+
+
 #section_carte{
     display: grid;
 }
@@ -283,12 +284,14 @@ body {
     max-width: 100%;
     overflow: hidden;
     padding: 0 1rem;
+    
 }
 .titre_section_entree{
     text-transform: uppercase;
     position: relative;
     padding-bottom: .5rem;
     font-weight: 400;
+    
 }
 .titre_section_entree:after {
     content: "";
@@ -308,16 +311,32 @@ body {
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     overflow: hidden;
     cursor: pointer;
-    animation: itemAppear .6s;
-    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
-    animation-fill-mode: both;
-    /*transform: scale(0);*/
-    max-width: 100%;
 }
-.nom_entree{
+.choix1{
+
+    animation-duration: 0.6s;
+    /*animation-delay: 15s;*/
+    animation-name: glissement;
+    /*animation-iteration-count: infinite;*/
+  }
+  @keyframes glissement {
+    from {
+      margin-bottom: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+  }
+.nom_entree,.entree_titre{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+.nom_entree {
+    flex: 1;
 }
 .entree_titre{
     margin: 0;
@@ -335,29 +354,34 @@ body {
     align-items: flex-end;
     padding-left: .5rem;
 }
-.validation_entree{
-    background-color: #99e2d0;
-    margin: -1rem -5rem -1rem 1rem;
-    width: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-duration: .5s;
-}
-.gestion_entree_icon{
-    height: 1.6rem;
-    width: 1.6rem;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    transform: rotate(180deg);
-    transition-duration: .5s;
-}
-.entree_icon {
-    color: #99e2d0;
-}
+
+    .validation_entree{
+        background-color: #99e2d0;
+        margin: -1rem -5rem -1rem 1rem;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: .5s;
+    }
+    .gestion_entree_icon{
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        transform: rotate(360deg);
+        transition: 2s;
+    }
+    .entree_icon {
+        color: #99e2d0;
+    }
+    .choix1:hover .validation_entree {
+        margin-right: -1rem;
+    }
+
 .commande{
     margin: 0 auto;
     margin-top: 20px;
@@ -375,4 +399,69 @@ body {
     cursor: pointer;
     transition-duration: .25s;
     box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+}
+.duree1{
+
+    animation-delay: 0s;
+}
+.duree2{
+    animation-delay: .00125s;
+}
+.duree3{
+    animation-delay: .0025s;
+}
+.duree4{
+    animation-delay: 0s;
+}
+.duree5{
+    animation-delay: .00125s;
+}
+.duree6{
+    animation-delay: .0025s;
+}
+.duree7{
+    animation-delay: 0s;
+}
+.duree8{
+    animation-delay: .00125s;
+}
+.duree9{
+    animation-delay: .0025s;
+}
+@media screen and (min-width: 993px) {
+    #la_carte{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #section_carte {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #liste_choix {
+        margin-left: 130px;
+        display:flex ;
+    column-gap: 102px;
+    }
+    #liste_choix :hover{
+        background-color: rgb(217, 206, 228);
+    }
+    .commande :hover{
+        background-color: white;
+        
+    }
+    #pied_page_liste{
+        display: flex;
+    }
+    .element_liste{
+        
+        margin: 0 auto;
+    }
+
+    #pied_page_logo {
+            font-size: 35px;
+            margin: 10px auto 27px;
+    }
+    .pied_page_lien {
+        font-size: 18px;
+    }
 }
