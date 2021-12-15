@@ -10,8 +10,17 @@ body {
     inset: 0;
     z-index: 1;
     opacity: 0.9;
-    animation: disappear 1s;
+    animation: disappear 200ms;
     animation-fill-mode: forwards;
+    animation-delay: 3s;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.fa-circle-notch{
+    justify-content: center;
+    animation: spin 3s infinite  linear;
 }
 @keyframes disappear{
     0%{
@@ -21,6 +30,11 @@ body {
         transform: scale(0);
     }
 
+}
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 #logo_texte {
@@ -292,7 +306,7 @@ a{
     border-radius: 0;
   }
   .fa-heart:hover::before{
-    color: red;
+    color:#c59cf8;
 }
 
 
