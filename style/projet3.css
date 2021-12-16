@@ -3,47 +3,7 @@ body {
     font-family: Roboto,sans-serif;
     scroll-behavior: smooth;
 }
-.loader{
-    background-color: #fff;
-    height: 100vh;
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    opacity: 0.9;
-    animation: disappear 200ms 2s;
-    animation-fill-mode: forwards;
-    place-items: center;
-    display: flex;
-    justify-content: center;
-
-}
-.loader::after{
-    content: "";
-    height: 100px;
-    width: 100px;
-    border-top: 5px solid #b06cc5;
-    border-bottom: 5px solid #caacd4;
-    border-left: 5px solid #e4d8eb;
-    border-right: 5px solid #e4d8eb;
-    border-radius: 50%;
-    animation: spin 1s infinite  ease-in-out;
-}
-
-@keyframes disappear{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(0);
-    }
-
-}
-@keyframes spin{
-    to{
-        transform: rotate(360deg);
-    }
-}
-
+/*############# logo du site #############*/
 #logo_texte {
     font-family: Shrikhand,"cursive";
     margin: 0;
@@ -58,6 +18,7 @@ a{
     text-decoration: none;
     color: black;
 }
+/* ####### section recherche et exploration ####### */
 #recherche{
     position: relative;
     display: flex;
@@ -102,6 +63,7 @@ a{
     opacity: 1;
     background-color: #f3f3f3;
 }
+/*########## parttie fonctionnement ##########*/
 #bloc_Fonctionnement{
     padding: 32px 16px;
 }
@@ -141,37 +103,8 @@ a{
     position: absolute;
     left: -12px;
 }
-    /* pie de page footer*/
-#pied_page{
-    background-color: #353535;
-}
-#pied_page #pied_page_box {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-}
-#pied_page_logo {
-    color: #fff;
-    font-family: Shrikhand,"cursive";
-    font-size: 19px;
-    margin: 0 0 16px;
-}
-#pied_page_liste{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-}
-.element_liste{
-    margin: 8px 0;
-}
-.pied_page_lien{
-    
-    color: white;
-    text-decoration: none;
-
-}
-/*restaurants*/
+   
+/*###########  restaurants  ##############*/
 .restaurants{
     background-color: #f6f6f6;
     padding: 32px 16px;
@@ -237,6 +170,7 @@ a{
 .pied_page_carte_sousTitre{
     margin: 0;
 }
+/*########## les parties communes  aux autres pages du site ##########*/
 
 .fleche{
     position: absolute;
@@ -275,80 +209,6 @@ a{
     align-items: center;
     justify-content: space-between;
 }
-/*.menu_bouton{
-    display: inline-flex;
-}*/
-
-.pied_page_carte .fas{
-    position: absolute;
-    color: transparent;
-    background-image: linear-gradient(red,blue);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity: 0;
-    transition: all 200ms ease-in-out;
-}
-.pied_page_carte :hover .fas{
-    opacity: 1;
-    transform: translateY(-5%) scale(1.1);
-}
-#entete_du_menu .fas{
-    position: absolute;
-    color: transparent;
-    background-image: linear-gradient(red,blue);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity: 0;
-    transition: all 200ms ease-in-out;
-}
-#entete_du_menu :hover .fas{
-    opacity: 1;
-    transform: translateY(-5%) scale(1.1);
-}
-
-
-/*.coeur{
-    width: 32px;
-  height: 30px;
-  left: 36px;
-  font-size: 1.3rem;
-  font-family: arial, sans-serif;
-  font-weight: 700;
-  position: relative;
-  color: violet;
-  z-index: 0;
- border: 1px solid #892cdc;
- background: black;
-  overflow: hidden;
-
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.coeur::before {
-    content: '';
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    font-size: 32px;
-    background: white;
-    border-radius: 50% 50% 0% 0%;
-    z-index: -1;
-    transition: all .1s;
-  }
-  .coeur:hover::before {
-    top: 0;
-    border-radius: 0;
-  }
-  .fa-heart:hover::before{
-    color:#c59cf8;
-}
-*/
-
-
 #section_carte{
     display: grid;
 }
@@ -384,24 +244,7 @@ a{
     overflow: hidden;
     cursor: pointer;
 }
-.choix1{
 
-    animation-duration: 0.6s;
-    /*animation-delay: 15s;*/
-    animation-name: glissement;
-    /*animation-iteration-count: infinite;*/
-  }
-  @keyframes glissement {
-    from {
-      margin-bottom: 100%;
-      width: 300%;
-    }
-  
-    to {
-      margin-top: 0%;
-      width: 100%;
-    }
-  }
 .nom_entree,.entree_titre{
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -426,34 +269,6 @@ a{
     align-items: flex-end;
     padding-left: .5rem;
 }
-
-    .validation_entree{
-        background-color: #99e2d0;
-        margin: -1rem -5rem -1rem 1rem;
-        width: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition-duration: .5s;
-    }
-    .gestion_entree_icon{
-        height: 1.6rem;
-        width: 1.6rem;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-        transform: rotate(360deg);
-        transition: 2s;
-    }
-    .entree_icon {
-        color: #99e2d0;
-    }
-    .choix1:hover .validation_entree {
-        margin-right: -1rem;
-    }
-
 .commande{
     margin: 0 auto;
     margin-top: 20px;
@@ -472,10 +287,126 @@ a{
     transition-duration: .25s;
     box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
 }
+
+ /* #############  pied de page footer  #############*/
+ #pied_page{
+    background-color: #353535;
+}
+#pied_page #pied_page_box {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+#pied_page_logo {
+    color: #fff;
+    font-family: Shrikhand,"cursive";
+    font-size: 19px;
+    margin: 0 0 16px;
+}
+#pied_page_liste{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+}
+.element_liste{
+    margin: 8px 0;
+}
+.pied_page_lien{
+    
+    color: white;
+    text-decoration: none;
+
+}
+
+/*############# PARTIE ANIMATION ############# */
+.loader{
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 200ms 2s;
+    animation-fill-mode: forwards;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.loader::after{
+    content: "";
+    height: 100px;
+    width: 100px;
+    border-top: 5px solid #b06cc5;
+    border-bottom: 5px solid #caacd4;
+    border-left: 5px solid #e4d8eb;
+    border-right: 5px solid #e4d8eb;
+    border-radius: 50%;
+    animation: spin 1s infinite  ease-in-out;
+    
+}
+@keyframes disappear{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+
+}
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+.choix1{
+
+    animation-duration: 0.6s;
+    animation-name: glissement;
+  }
+  @keyframes glissement {
+    from {
+      margin-bottom: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+  }
+.validation_entree{
+    background-color: #99e2d0;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+}
+.gestion_entree_icon{
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    transform: rotate(360deg);
+    transition: 2s;
+}
+.entree_icon {
+    color: #99e2d0;
+}
+.choix1:hover .validation_entree {
+    margin-right: -1rem;
+}
 .duree1{
 
     animation-delay: 0s;
 }
+
 .duree2{
     animation-delay: .00125s;
 }
@@ -500,6 +431,34 @@ a{
 .duree9{
     animation-delay: .0025s;
 }
+.pied_page_carte .fas{
+    position: absolute;
+    color: transparent;
+    background-image: linear-gradient(red,blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+.pied_page_carte :hover .fas{
+    opacity: 1;
+    transform: translateY(-5%) scale(1.1);
+}
+#entete_du_menu .fas{
+    position: absolute;
+    color: transparent;
+    background-image: linear-gradient(red,blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+#entete_du_menu :hover .fas{
+    opacity: 1;
+    transform: translateY(-5%) scale(1.1);
+}
+
+/*#############  les media queries   #############*/
 @media screen and (min-width: 993px) {
     #la_carte{
         display: grid;
